@@ -1,0 +1,47 @@
+{% if data != "mooncake" %}	
+	<br>
+	<h4>Informacje o szukanym obiekcie. </h4>
+
+<table class="table table-striped">
+		<tbody>
+			<tr>
+				<td><b>Obiekt:</b></td>
+				<td>{{ info[4]|capitalize }}</td>
+			</tr>
+			{% if info|length > 5 %}
+				<tr>
+					<td><b>Marka:</b></td>
+					<td>{{ info[5] }}</td>
+				</tr>
+				<tr>
+					<td><b>Model:</b></td>
+					<td>{{ info[6] }}</td>
+				</tr>
+			{% endif %}
+    </tbody>
+  </table>	
+
+	<br>
+	<h4>Szczegóły położenia obiektu na obrazie.</h4>
+<table class="table table-striped">
+		<tbody>
+			<tr>
+				<td><b>Koordynat X:</b></td>
+				<td>{{ info[0] }} pixel</td>
+			</tr>
+			<tr>
+				<td><b>Koordynat Y:</b></td>
+				<td>{{ info[1] }} pixel</td>
+			</tr>
+			<tr>
+				<td><b>Szerokość:</b></td>
+				<td>{{ info[2] }} pixeli</td>
+			</tr>
+			<tr>
+				<td><b>Wysokość:</b></td>
+				<td>{{ info[3] }} pixeli</td>
+			</tr>
+		</tbody>
+		
+  </table>
+{% endif %}

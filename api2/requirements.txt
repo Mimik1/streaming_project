@@ -1,0 +1,4 @@
+mysqlclient==2.0.3
+Flask==1.1.2
+pymysql==0.10.1
+Flask-MySQLdb==0.2.0

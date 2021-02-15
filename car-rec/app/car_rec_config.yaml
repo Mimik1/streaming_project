@@ -1,0 +1,6 @@
+config_dictionary:
+  mongo_database: "api_dev_db"
+  mongo_user: 'analyser'
+  mongo_password: 'banana'
+  collection_photos: "photos"
+  collection_labels: 'labels_comments'

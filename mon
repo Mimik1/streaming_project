@@ -1,0 +1,53 @@
+        mongo1:
+                image: "mongo:4.0-xenial"
+                container_name: mongo1
+                command: --replSet rs0 --smallfiles --oplogSize 128
+                volumes:
+                        - rs1:/data/db
+
+                networks:
+                        - my_network
+
+                ports:
+                        - 27017:27017
+
+                restart: always
+
+        mongo2:
+                image: "mongo:4.0-xenial"
+                container_name: mongo2
+                command: --replSet rs0 --smallfiles --oplogSize 128
+                volumes:
+                        - rs2:/data/db
+
+                networks:
+                        - my_network
+
+                ports:
+                        - 27018:27017
+
+                restart: always
+
+        mongo3:
+                image: "mongo:4.0-xenial"
+                container_name: mongo3
+                command: --replSet rs0 --smallfiles --oplogSize 128
+                volumes:
+                        - rs3:/data/db
+
+                networks:
+                        - my_network
+
+                ports:
+                        - 27019:27017
+
+                restart: always
+
+
+                        KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092
+                        KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+                        KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+                        KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+                        KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+                        KAFKA_LOG_RETENTION_MS: 3000
+                        KAFKA_CREATE_TOPICS: topic_test:1:1

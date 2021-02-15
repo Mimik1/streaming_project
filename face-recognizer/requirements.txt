@@ -1,0 +1,5 @@
+-i https://pypi.org/simple
+face-recognition-models==0.3.0
+face-recognition==1.3.0
+kafka-python==2.0.2
+pillow==8.0.0; python_version >= '3.6'
